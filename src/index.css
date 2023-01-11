@@ -1,0 +1,112 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --inactive-slide-width: 17.5vw;
+  --slide-width: 60vw;
+  --slider-gap: calc(
+    (100vw - var(--slide-width) - (2 * var(--inactive-slide-width))) / 2
+  );
+  --slide-height: calc(var(--slide-width) / 1.8);
+}
+
+.slider-container {
+  position: relative;
+  width: 100vw;
+  height: 525px;
+  overflow-x: hidden;
+}
+
+.navigation {
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  width: var(--inactive-slide-width);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fff;
+  opacity: 0.67;
+}
+
+.navigation svg {
+  visibility: visible;
+}
+
+.left-navigation {
+  left: 0;
+}
+
+.right-navigation {
+  right: 0;
+}
+
+.slider {
+  position: absolute;
+  left: calc(var(--inactive-slide-width) + var(--slider-gap));
+  display: flex;
+  gap: var(--slider-gap);
+  width: fit-content;
+  height: 100%;
+  animation: left 3s;
+}
+
+.slide {
+  width: var(--slide-width);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.pagination {
+  display: flex;
+  padding: 8px;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  width: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.clip-text {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid-box {
+  text-align: center;
+  padding-top: 61px;
+  height: 420px;
+}
+
+@media screen and (min-width: 426px) {
+  .navigation svg {
+    visibility: hidden;
+  }
+}
