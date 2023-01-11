@@ -3,7 +3,7 @@ import { BsApple, BsSearch, BsBag } from "react-icons/bs"
 
 const Nav = () => {
   return (
-    <ul className=" w-full flex justify-center items-center gap-10 h-11 text-xs bg-[#000] text-nav-link fixed left-0 top-0 z-10">
+    <ul className=" w-full flex justify-center items-center gap-10 h-11 text-xs bg-black text-nav-link fixed left-0 top-0 z-20">
       <li>
         <a href="">
           <BsApple />

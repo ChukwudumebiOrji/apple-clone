@@ -15,6 +15,7 @@ module.exports = {
         "footer-bg": "#f5f5f7",
         "footer-text-color": "#6e6e73",
         "footer-link-color": "#424245",
+        "footer-heading-color": "#1d1d1f",
       },
       fontFamily: {
         SF: ["SF Pro Display", "sans-serif"],
